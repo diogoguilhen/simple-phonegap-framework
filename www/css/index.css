@@ -1,13 +1,92 @@
+/* fonts
+------------------------------------------------- */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Ubuntu Light'), local('Ubuntu-Light'), url(../fonts/Ubuntu-Light.woff) format('woff');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ubuntu'), url(../fonts/Ubuntu.woff) format('woff');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url(../fonts/Ubuntu-Medium.woff) format('woff');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(../fonts/Ubuntu-Bold.woff) format('woff');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Ubuntu Light Italic'), local('Ubuntu-LightItalic'), url(../fonts/Ubuntu-LightItalic.woff) format('woff');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(../fonts/Ubuntu-Italic.woff) format('woff');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Ubuntu Medium Italic'), local('Ubuntu-MediumItalic'), url(../fonts/Ubuntu-MediumItalic.woff) format('woff');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Ubuntu Bold Italic'), local('Ubuntu-BoldItalic'), url(../fonts/Ubuntu-BoldItalic.woff) format('woff');
+}
+
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
     position: relative;
     min-height: 100%;
+    font-weight: 400;
+    font-family: Ubuntu, Arial, Verdana, sans-serif;
 }
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    font-size: 12px;
+    font-family: Ubuntu, Arial, Verdana, sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: Ubuntu, Arial, Verdana, sans-serif;
+}
+
+h1{
+    font-size: 22px;
+}
+
+h3{
+    font-size: 18px;
+}
+
+h3{
+    font-size: 15px;
+}
+
+
+.navbar-brand {
+    font-size: 14px;
+}
+
 #footer {
     position: absolute;
     bottom: 0;
@@ -15,6 +94,7 @@ body {
     /* Set the fixed height of the footer here */
     height: 60px;
     background-color: #f5f5f5;
+    font-weight: 300;
 }
 
 .app-page {

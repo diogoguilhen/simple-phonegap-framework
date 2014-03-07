@@ -61,14 +61,17 @@ var app = {
             /**
              * we have to pop the array to remove the actual page
              */
+            var newPage;
             app.navigation.pageHistory.pop();
             if (app.navigation.pageHistory.length > 0) {
-                var lastPage = app.navigation.pageHistory.pop();
-                app.navigation.changePage(lastPage);
+                newPage = app.navigation.pageHistory.pop();
             } else {
                 if (app.navigation.activePage !== 'home') {
-                    app.navigation.changePage('home');
+                    newPage = 'home';
                 }
+            }
+            if (newPage !== app.navigation.activePage) {
+                app.navigation.changePage(newPage);
             }
         },
         onMenuButton: function () {

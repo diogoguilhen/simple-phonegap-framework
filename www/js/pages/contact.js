@@ -64,6 +64,7 @@ app.pages.contact = {
         }
 
         if (!error) {
+            mail.body = 'Mail from SiPhoGaFra: <br/>' + mail.body;
             this.sendMail(mail);
         }
     },

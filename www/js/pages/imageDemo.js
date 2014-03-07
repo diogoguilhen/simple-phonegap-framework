@@ -9,8 +9,9 @@ app.pages.imageDemo = {
     },
     bindEvents: function () {
         "use strict";
-        $('#camer-button').unbind('click')
+        $('#camera-button').unbind('click')
             .click(function () {
+                console.log('trying to take picture');
                 navigator.camera.getPicture(this.onSuccess, this.onFail, { quality: 20,
                     destinationType: Camera.DestinationType.DATA_URL
                 });

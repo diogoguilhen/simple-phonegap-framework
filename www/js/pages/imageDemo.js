@@ -12,6 +12,11 @@ app.pages.imageDemo = {
         $('#camera-button').unbind('click')
             .click(function () {
                 console.log('trying to take picture');
+                if (navigator.camera !== undefined){
+                    $('#camera-error').html('navigator.camera is definded').fadeIn('slow');
+                } else {
+                    $('#camera-error').html('navigator.camera is undefinded').fadeIn('slow');
+                }
                 navigator.camera.getPicture(this.onSuccess, this.onFail, { quality: 20,
                     destinationType: navigator.camera.DestinationType.DATA_URL
                 });

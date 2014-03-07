@@ -61,13 +61,18 @@ html {
 }
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: 36px;
     font-size: 12px;
     font-family: Ubuntu, Arial, Verdana, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: Ubuntu, Arial, Verdana, sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 h1{
@@ -83,6 +88,8 @@ h3{
 }
 
 
+
+
 .navbar-brand {
     font-size: 14px;
 }
@@ -92,19 +99,24 @@ h3{
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
+    height: 36px;
     background-color: #f5f5f5;
     font-weight: 300;
 }
 
 .app-page {
-    padding: 60px 15px 0;
+    padding: 65px 5px 0;
+    display: none;
+}
+
+#home-page{
+    display: block;
 }
 
 #footer > .container {
     padding-right: 15px;
     padding-left: 15px;
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -130,9 +142,15 @@ h3{
 
 #navbar-back-button {
     float: left;
-    margin: 17px 5px 0 10px;
+    margin-left: 10px;
+    margin-right: 0;
     font-size: 18px;
     color: #777;
+}
+
+#navbar-back-button span{
+    height: 14px;
+    display: block;
 }
 
 .app-page-button {
@@ -155,4 +173,24 @@ h3{
 .active-app-page-button{
     color: #444;
     background-color: #d1d1d1;
+}
+
+/* button
+--------------------- */
+
+.btn-app{
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 34px;
+    color: #666;
+}
+
+#mail-body-input{
+    height: 300px;
+}
+
+.form_error_text {
+    margin-bottom: 10px;
+    display: none;
 }

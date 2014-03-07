@@ -4,9 +4,27 @@ var app = {
     // Application Constructor
     initialize: function () {
         'use strict';
-        this.events.bindEvents();
-        this.navigation.bindEvents();
-        this.navigation.changePage('home');
+        this.template.createPages();
+        app.events.bindEvents();
+        app.navigation.bindEvents();
+        if (app.pages.home.run !== undefined && typeof app.pages.home.run === 'function') {
+            app.pages.home.run();
+        }
+    },
+    template: {
+        createPages: function () {
+            "use strict";
+            var key;
+            for (key in app.pages) {
+                //noinspection JSUnfilteredForInLoop
+                if (app.pages.hasOwnProperty(key) && app.pages[key].run !== undefined && typeof app.pages[key].run === 'function' && app.pages[key].content !== undefined) {
+                    //noinspection JSUnfilteredForInLoop
+                    $('#' + key + '-page > .container').html(app.pages[key].content);
+                }
+            }
+        }
+    },
+    pages: {
     },
     navigation: {
         pageHistory: [],
@@ -39,21 +57,29 @@ var app = {
         },
         changePage: function (page) {
             "use strict";
-            $('.app-page').hide();
-            $('#' + page + '-page').slideDown('slow');
-            $('.app-page-button').removeClass('active-app-page-button');
-            $('.app-page-button [rel="' + page + '"]').addClass('active-app-page-button');
-            if (page !== 'home') {
-                $('#navbar-back-button').fadeIn('slow');
-            } else {
-                $('#navbar-back-button').hide();
+            console.log('change to ' + page);
+            if (page !== undefined && page !== app.navigation.activePage && app.pages[page] !== undefined) {
+                $('.app-page').hide();
+                $('#' + page + '-page').slideDown('slow');
+                $('.app-page-button').removeClass('active-app-page-button');
+                $('.app-page-button [rel="' + page + '"]').addClass('active-app-page-button');
+                if (page !== 'home') {
+                    $('#navbar-back-button').fadeIn('slow');
+                } else {
+                    $('#navbar-back-button').hide();
+                }
+                app.navigation.activePage = page;
+                this.setPageHistory(page);
+                if (app.pages[page].run !== undefined && typeof app.pages[page].run === 'function') {
+                    app.pages[page].run();
+                }
             }
-            app.navigation.activePage = page;
-            this.setPageHistory(page);
         },
         setPageHistory: function (page) {
             "use strict";
-            this.pageHistory.push(page);
+            if (page !== this.pageHistory[this.pageHistory.length - 1]) {
+                this.pageHistory.push(page);
+            }
             console.log(this.pageHistory);
         },
         goBackInHistory: function () {
@@ -87,6 +113,54 @@ var app = {
         onDeviceReady: function () {
             'use strict';
             app.navigation.pageHistory = [];
+        }
+    },
+    validate: {
+        isValidEmail: function (str) {
+            "use strict";
+            var filter;
+            filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return filter.test(str);
+        },
+        hasLength: function (str, length) {
+            "use strict";
+            return str.length >= length;
+        }
+    },
+    ajax: {
+        ajaxError: function (error) {
+            "use strict";
+            console.log(error);
+        },
+        jsonp: function (script, request, callbackSuccess, callbackError) {
+            'use strict';
+            $.ajax({
+                type: "POST",
+                url: "http://bastianmeier.de/Ajax/" + script,
+                dataType: 'jsonp',
+                data: request,
+                success: function (data) {
+                    if (data.result === 'true') {
+                        if (callbackSuccess && typeof callbackSuccess === 'function') {
+                            if (data.content) {
+                                callbackSuccess(data.content);
+                            } else {
+                                callbackSuccess();
+                            }
+                        }
+                    } else {
+                        if (callbackError && typeof callbackError === 'function') {
+                            if (data.error) {
+                                callbackError(data.error);
+                            } else {
+                                callbackError();
+                            }
+                        } else {
+                            app.ajax.ajaxError(data.error);
+                        }
+                    }
+                }
+            });
         }
     }
 };

@@ -95,8 +95,6 @@ app.pages.contact.setContent('<h1>' +
         'Contact me:' +
         '</h1>' +
         '<div class="Mail-form">' +
-        '<div id="mail_success" class="display-none alert alert-success">Thanks for your message ...</div> ' +
-        '<div id="mail_error" class="display-none alert alert-danger">An error occurred!</div>' +
         '<div class="form-group" id="mail-name">' +
         '<div class="form_error_text">Please type in a your name</div>' +
         '<div class="input-group">' +
@@ -118,6 +116,8 @@ app.pages.contact.setContent('<h1>' +
         '<textarea id="mail-body-input" class="form-control" placeholder="Your Message"></textarea>' +
         '</div>' +
         '</div>' +
+        '<div id="mail_success" class="display-none alert alert-success">Thanks for your message ...</div> ' +
+        '<div id="mail_error" class="display-none alert alert-danger">An error occurred!</div>' +
         '<p>' +
         '<button id="send_mail" class="btn-app">' +
         '<span class="glyphicon glyphicon-export"> </span>' +

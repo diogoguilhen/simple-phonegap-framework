@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "de.bastianmeier.basti"
+        id        = "de.bastianmeier.siphogafra"
         version   = "1.0.1">
 
-    <name>Basti</name>
+    <name>siphogafra</name>
 
     <description>
-        Bastian
+        Simple PhoneGap Framework
     </description>
 
     <author href="http://bastianmeier.de" email="email@bastianmeier.de">

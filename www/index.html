@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Bastian Meier" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <title>Mobile Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Font awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- the base css file -->
+    <link href="css/index.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span id="navbar-back-button" class="display-none fa fa-chevron-left"></span>
+            <a class="navbar-brand" href="#">App Template</a>
+        </div>
+        <div id="navbar-collapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li rel="home" class="active-app-page-button app-page-button">Home</li>
+                <li rel="contact" class="app-page-button">Contact</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li rel="about" class="app-page-button">About</li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Configs</li>
+                        <li rel="config" class="app-page-button">Config</li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<div id="app-body">
+    <div id="home-page" class="app-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Home</h1>
+            </div>
+            <p>
+                The First page of the app ...
+            </p>
+        </div>
+    </div>
+    <div id="config-page" class="app-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Config</h1>
+            </div>
+            <p>
+                Configurations goes in here
+            </p>
+        </div>
+    </div>
+    <div id="contact-page" class="app-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Contact</h1>
+            </div>
+            <p>
+                Contact formular here
+            </p>
+        </div>
+    </div>
+    <div id="about-page" class="app-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>About</h1>
+            </div>
+            <p>
+                This is a Template for phoneGap.
+            </p>
+            <p>
+                It uses bootstrap, font-awesome and jquery
+            </p>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="container">
+        <p class="text-muted">a simple phonegap template</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="phonegap.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-2.1.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!-- the Main js file for our project -->
+<script type="text/javascript" src="js/index.js"></script>
+<!-- starting the app -->
+<script type="text/javascript">
+    app.initialize();
+</script>
+</body>
+</html>

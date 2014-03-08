@@ -58,9 +58,9 @@ app.pages.notificationDemo.setContent('<div class="panel panel-default">' +
     '<p>' +
     '<button id="notification-vibrate" class="btn-app">vibrate</button>' +
     '</p>' +
-    '<p>' +
+    '<!--<p>' +
     '<button id="notification-note" class="btn-app">set notifcation</button>' +
-    '</p>' +
+    '</p>-->' +
     '</div>' +
     '</div>'
     );

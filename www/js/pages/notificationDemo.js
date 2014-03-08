@@ -17,6 +17,10 @@ app.pages.notificationDemo = {
             .click(function () {
                 app.pages.notificationDemo.vibrate();
             });
+        $('#notification-note').unbind('click')
+            .click(function () {
+                app.pages.notificationDemo.note();
+            });
     },
     content : null,
     setContent: function (content) {
@@ -35,6 +39,10 @@ app.pages.notificationDemo = {
     vibrate: function () {
         'use strict';
         navigator.notification.vibrate(2000);
+    },
+    note: function () {
+        "use strict";
+        window.plugin.notification.local.add({ message: 'Great app!' });
     }
 };
 
@@ -49,6 +57,9 @@ app.pages.notificationDemo.setContent('<div class="panel panel-default">' +
     '</p>' +
     '<p>' +
     '<button id="notification-vibrate" class="btn-app">vibrate</button>' +
+    '</p>' +
+    '<p>' +
+    '<button id="notification-note" class="btn-app">set notifcation</button>' +
     '</p>' +
     '</div>' +
     '</div>'

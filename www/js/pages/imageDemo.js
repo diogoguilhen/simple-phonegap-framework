@@ -13,7 +13,7 @@ app.pages.imageDemo = {
             .click(function () {
                 console.log('trying to take picture');
                 navigator.camera.getPicture(this.onSuccess, this.onFail, { quality: 10,
-                    destinationType: 0
+                    destinationType: Camera.DestinationType.DATA_URL
                 });
             });
     },

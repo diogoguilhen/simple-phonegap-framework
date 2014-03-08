@@ -24,21 +24,35 @@ app.pages.contactsDemo = {
         this.content = content;
     },
     onDeviceReady: function () {
+        'use strict';
+        var options = new ContactFindOptions(),
+            filter = ["displayName", "photos"];
 
         // find all contacts
-        var options = new ContactFindOptions();
         options.filter = "";
-        var filter = ["displayName", "name"];
+        options.multiple = true;
         navigator.contacts.find(filter, this.onSuccess, this.onError, options);
     },
     onSuccess: function (contacts) {
         'use strict';
         var i,
-            j,
-            contactsList = $('#contacts-list');
+            contactsList = $('#contacts-list'),
+            photo,
+            photoDebug;
+        console.log(contacts);
         // display the address information for all contacts
         for (i = 0; i < contacts.length; i++) {
-            contactsList.append('<div class="contacts-list-item">' + contacts[i].displayName  +  '</div>');
+            if (contacts[i].photos !== null && contacts[i].photos.length > 0 && contacts[i].photos[0].pref !== undefined) {
+                photo = '<img src="' + contacts[i].photos[0].pref + '" alt="" />';
+                photoDebug = '<br>' + contacts[i].photos[0].pref;
+            } else {
+                photo = '';
+                photoDebug = '';
+            }
+            contactsList.append('<div class="contacts-list-item clearfix">' +
+                '<div class="contacts-photo">' + photo + '</div>' +
+                '<div class="contacts-name">' + contacts[i].displayName  + photoDebug +  '</div>' +
+                '</div>');
         }
     },
     onError: function (contactError) {

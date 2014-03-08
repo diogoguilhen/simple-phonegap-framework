@@ -47,11 +47,11 @@ var app = {
              */
             $('.app-page-button').click(function () {
                 var target = $(this).attr('rel');
-                app.navigation.changePage(target);
                 $('#navbar-collapse').slideUp('fast', function () {
                     $('#navbar-collapse').removeClass('in').height(1).css('display', false);
                     $('.navbar-toggle').addClass('collapsed');
                 });
+                app.navigation.changePage(target);
             });
 
         },

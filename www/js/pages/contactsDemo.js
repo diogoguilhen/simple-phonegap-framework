@@ -29,14 +29,16 @@ app.pages.contactsDemo = {
     onSuccess: function (contacts) {
         'use strict';
         var i,
-            contactsList = $('#contacts-list');
-        console.log(contacts);
+            contactsList = $('#contacts-list'),
+            contactsListInner = '';
+        contactsList.html('<span class="fa fa-spin fa-spinner"></span>');
         // display the address information for all contacts
         for (i = 0; i < contacts.length; i++) {
-            contactsList.append('<div class="contacts-list-item clearfix">' +
+            contactsListInner += '<div class="contacts-list-item clearfix">' +
                 '<div class="contacts-name">' + contacts[i].displayName  +  '</div>' +
-                '</div>');
+                '</div>';
         }
+        contactsList.html(contactsListInner);
     },
     onError: function (contactError) {
         'use strict';

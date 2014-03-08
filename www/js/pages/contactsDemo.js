@@ -36,22 +36,12 @@ app.pages.contactsDemo = {
     onSuccess: function (contacts) {
         'use strict';
         var i,
-            contactsList = $('#contacts-list'),
-            photo,
-            photoDebug;
+            contactsList = $('#contacts-list');
         console.log(contacts);
         // display the address information for all contacts
         for (i = 0; i < contacts.length; i++) {
-            if (contacts[i].photos !== null && contacts[i].photos.length > 0 && contacts[i].photos[0].pref !== undefined) {
-                photo = '<img src="' + contacts[i].photos[0].pref + '" alt="" />';
-                photoDebug = '<br>' + contacts[i].photos[0].pref;
-            } else {
-                photo = '';
-                photoDebug = '';
-            }
             contactsList.append('<div class="contacts-list-item clearfix">' +
-                '<div class="contacts-photo">' + photo + '</div>' +
-                '<div class="contacts-name">' + contacts[i].displayName  + photoDebug +  '</div>' +
+                '<div class="contacts-name">' + contacts[i].displayName  +  '</div>' +
                 '</div>');
         }
     },

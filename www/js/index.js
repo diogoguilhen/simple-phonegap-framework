@@ -60,7 +60,6 @@ var app = {
             console.log('change to ' + page);
             if (page !== undefined && page !== app.navigation.activePage && app.pages[page] !== undefined) {
                 $('.app-page').hide();
-                $('#' + page + '-page').slideDown('slow');
                 $('.app-page-button').removeClass('active-app-page-button');
                 $('.app-page-button [rel="' + page + '"]').addClass('active-app-page-button');
                 if (page !== 'home') {
@@ -70,6 +69,7 @@ var app = {
                 }
                 app.navigation.activePage = page;
                 this.setPageHistory(page);
+                $('#' + page + '-page').slideDown('slow');
                 if (app.pages[page].run !== undefined && typeof app.pages[page].run === 'function') {
                     app.pages[page].run();
                 }

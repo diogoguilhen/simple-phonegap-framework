@@ -9,13 +9,6 @@ app.pages.contactsDemo = {
     },
     bindEvents: function () {
         "use strict";
-        $('#camera-button').unbind('click')
-            .click(function () {
-                console.log('trying to take picture');
-                navigator.camera.getPicture(this.onSuccess, this.onFail, { quality: 10,
-                    destinationType: 0
-                    });
-            });
         document.addEventListener("deviceready", this.onDeviceReady(), false);
     },
     content : null,

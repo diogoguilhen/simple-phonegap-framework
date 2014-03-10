@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $, app, console */
+/*global $, config, app, console */
 var app = {
     // Application Constructor
     initialize: function () {
@@ -26,11 +26,10 @@ var app = {
         },
         includeColorScheme: function (colorScheme) {
             "use strict";
-            var cssInclude = '<link href="css/' + colorScheme + '.css" rel="stylesheet">';
-            /**
-             * todo: add file check here
-              */
-            $('head').append(cssInclude);
+            if (colorScheme === 'green') {
+                var cssInclude = '<link href="css/' + colorScheme + '.css" rel="stylesheet">';
+                $('head').append(cssInclude);
+            }
         }
     },
     pages: {

@@ -16,9 +16,12 @@ app.pages.config = {
     }
 };
 
-app.pages.config.setContent('<h1>' +
-        'Settings' +
-        '</h1>' +
+app.pages.config.setContent('<h1>Settings</h1>' +
+        '<div class="panel panel-default">' +
+        '<div class="panel-heading">' +
+        '<h3>Login</h3>' +
+        '</div>' +
+        '<div class="panel-body">' +
         '<p>' +
         '<div class="input-group">' +
         '<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>' +
@@ -31,6 +34,8 @@ app.pages.config.setContent('<h1>' +
         '<input type="password" class="form-control" placeholder="Password">' +
         '</div>' +
         '</p>' +
+        '</div>' +
+        '</div>' +
         '<p>' +
         '<button id="config-save" class="btn-app">' +
         '<span class="glyphicon glyphicon-lock"> </span>' +

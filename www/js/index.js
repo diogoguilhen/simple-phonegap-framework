@@ -28,7 +28,7 @@ var app = {
             "use strict";
             if (colorScheme === 'green') {
                 var cssInclude = '<link href="css/' + colorScheme + '.css" rel="stylesheet">';
-                $('head').append(cssInclude);
+                //$('head').append(cssInclude);
             }
         }
     },

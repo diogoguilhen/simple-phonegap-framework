@@ -27,6 +27,9 @@ var app = {
         includeColorScheme: function (colorScheme) {
             "use strict";
             var cssInclude = '<link href="css/' + colorScheme + '.css" rel="stylesheet">';
+            /**
+             * todo: add file check here
+              */
             $('head').append(cssInclude);
         }
     },

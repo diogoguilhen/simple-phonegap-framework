@@ -10,6 +10,7 @@ var app = {
         if (app.pages.home.run !== undefined && typeof app.pages.home.run === 'function') {
             app.pages.home.run();
         }
+        this.template.includeColorScheme(config.colorScheme);
     },
     template: {
         createPages: function () {
@@ -22,6 +23,11 @@ var app = {
                     $('#' + key + '-page > .container').html(app.pages[key].content);
                 }
             }
+        },
+        includeColorScheme: function (colorScheme) {
+            "use strict";
+            var cssInclude = '<link href="css/' + colorScheme + '.css" rel="stylesheet">';
+            $('head').append(cssInclude);
         }
     },
     pages: {

@@ -1,0 +1,10 @@
+.navbar-default {
+    background-image: -webkit-linear-gradient(top,#8FAB3A,#000000 100%);
+    background-image: linear-gradient(to bottom,#8FAB3A,#000000 100%);
+}
+
+.panel-default>.panel-heading {
+    background-image: -webkit-linear-gradient(top,#8FAB3A,#000000 100%);
+    background-image: linear-gradient(to bottom,#8FAB3A,#000000 100%);
+}
+

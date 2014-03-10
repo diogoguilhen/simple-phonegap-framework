@@ -26,5 +26,5 @@ app.pages.about.setContent('<h1>' +
         'It uses bootstrap, font-awesome and jquery ' +
         '</p>' +
         '<p>' +
-        'Find more Infos on <a href="https://github.com/bastian-meier/simple-phonegap-framework">GitHub</a>' +
+        'Find more Infos on <a target="_blank" href="https://github.com/bastian-meier/simple-phonegap-framework">GitHub</a>' +
         '</p>');

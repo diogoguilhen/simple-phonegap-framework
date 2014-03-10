@@ -26,7 +26,7 @@ app.pages.home.setContent('<div class="panel panel-default">' +
         'With this Framework you can build Smartphone Apps with html5, css3 and js. ' +
         '</p>' +
         '<p>' +
-        'It is a Hobby Project of <a href="http://bastianmeier.de">me</a>.' +
+        'It is a Hobby Project of <a target="_blank" href="http://bastianmeier.de">me</a>.' +
         '</p>' +
         '<img class="img-responsive" src="img/basti.jpg" />' +
         '</div>' +

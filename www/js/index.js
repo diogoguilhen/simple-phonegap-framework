@@ -38,6 +38,14 @@ var app = {
     navigation: {
         pageHistory: [],
         activePage: 'home',
+        collapseNavbar: function () {
+            'use strict';
+            $('#navbar-collapse').slideUp('fast', function () {
+                $('#navbar-collapse').removeClass('in')
+                    .height(1).css('display', false);
+                $('.navbar-toggle').addClass('collapsed');
+            });
+        },
         bindEvents: function () {
             "use strict";
             /**
@@ -56,16 +64,14 @@ var app = {
              */
             $('.app-page-button').click(function () {
                 var target = $(this).attr('rel');
-                $('#navbar-collapse').slideUp('fast', function () {
-                    $('#navbar-collapse').removeClass('in').height(1).css('display', false);
-                    $('.navbar-toggle').addClass('collapsed');
-                });
+                app.navigation.collapseNavbar();
                 app.navigation.changePage(target);
             });
 
         },
         changePage: function (page) {
             "use strict";
+            app.navigation.collapseNavbar();
             console.log('change to ' + page);
             if (page !== undefined && page !== app.navigation.activePage && app.pages[page] !== undefined) {
                 $('.app-page').hide();

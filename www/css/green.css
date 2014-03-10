@@ -1,15 +1,22 @@
 .navbar-default {
-    background-image: -webkit-linear-gradient(top,#8FAB3A,#000000 100%);
-    background-image: linear-gradient(to bottom,#8FAB3A,#000000 100%);
+    background-image: -webkit-linear-gradient(top,#8FAB3A,#ACD8AC 100%);
+    background-image: linear-gradient(to bottom,#8FAB3A,#ACD8AC 100%);
 }
 
 .panel-default>.panel-heading {
-    background-image: -webkit-linear-gradient(top,#8FAB3A,#000000 100%);
-    background-image: linear-gradient(to bottom,#8FAB3A,#000000 100%);
+    background-image: -webkit-linear-gradient(top,#8FAB3A,#ACD8AC 100%);
+    background-image: linear-gradient(to bottom,#8FAB3A,#ACD8AC 100%);
 }
 
-#footer {
-    background-image: -webkit-linear-gradient(top,#8FAB3A,#000000 100%);
-    background-image: linear-gradient(to bottom,#8FAB3A,#000000 100%);
+#footer, .dropdown {
+    background-image: -webkit-linear-gradient(top,#8FAB3A,#ACD8AC 100%);
+    background-image: linear-gradient(to bottom,#8FAB3A,#ACD8AC 100%);
     background-repeat: repeat-x;
+}
+
+.navbar-default .navbar-brand {
+    color: #414141;
+}
+.text-muted {
+    color: #515151;;
 }

@@ -31,7 +31,7 @@ app.pages.contactsDemo = {
         var i,
             contactsList = $('#contacts-list'),
             contactsListInner = '';
-        contactsList.html('<span class="fa fa-spin fa-spinner"></span>');
+        contactsList.html('<div class="spinner"><span class="fa fa-spin fa-spinner"></span></div>');
         // display the address information for all contacts
         for (i = 0; i < contacts.length; i++) {
             contactsListInner += '<div class="contacts-list-item clearfix">' +
@@ -54,6 +54,7 @@ app.pages.contactsDemo.setContent('<div class="panel panel-default">' +
     '<div class="panel-body">' +
     '<div id="contacts-error" class="display-none alert alert-danger"></div>' +
     '<div id="contacts-list">' +
+    '<div class="spinner"><span class="fa fa-spin fa-spinner"></span></div>' +
     '</div>' +
     '</div>' +
     '</div>'

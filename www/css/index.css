@@ -222,3 +222,12 @@ h3{
 .contacts-name{
     margin: 10px 0 10px 0;
 }
+
+.spinner {
+    text-align: center;
+    padding: 10px;
+}
+
+.spinner span {
+    font-size: 40px;
+}
